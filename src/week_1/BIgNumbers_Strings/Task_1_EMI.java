@@ -1,4 +1,4 @@
-package week_1.Operators.BIgNumbers_Strings;
+package week_1.BIgNumbers_Strings;
 
 import java.math.BigDecimal;
 

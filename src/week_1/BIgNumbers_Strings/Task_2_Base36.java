@@ -1,4 +1,4 @@
-package week_1.Operators.BIgNumbers_Strings;
+package week_1.BIgNumbers_Strings;
 
 //Base36
 //        Говорихме, че има различни бройни системи. Има двоична, осмична, десетична шестнадесетична… и.т.н.
