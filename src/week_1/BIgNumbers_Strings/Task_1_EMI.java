@@ -34,7 +34,7 @@ public class Task_1_EMI {
 
         BigDecimal perMonth = over.divide(under, RoundingMode.HALF_UP);
 
-        System.out.println(perMonth.setScale(10, RoundingMode.HALF_UP));
+        System.out.println(perMonth.setScale(10, RoundingMode.HALF_UP)); // ще сработи ли printf и закръглението до 2рия знак
 
     }
 }
