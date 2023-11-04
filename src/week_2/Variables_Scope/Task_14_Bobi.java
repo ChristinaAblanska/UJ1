@@ -41,57 +41,39 @@ package week_2.Variables_Scope;
 import java.util.Scanner;
 
 public class Task_14_Bobi {
-    public static boolean checkUppercase(String str) {
-        boolean result = true;
-        int len = str.length();
-
-
-        for (int i = 0; i < len - 2; ++i) {
-            if (str.charAt(i) == ' '  || str.charAt(i) == ',') {
-                continue;
-            } else if (!Character.isUpperCase(str.charAt(i))) {
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
-
-    public static boolean starePoint(String str) {
-        // Не знам как да го направя да чете нищо
-        return str.equals("----") || str.equals("****");
-    }
 
     public static void main(String[] args) {
-        String sentence;
+        String sentence = "";
         Scanner scan = new Scanner(System.in);
-        sentence = scan.nextLine();
 
-        String askQustion = "Добре.";
-        String shoutQuestion = "Спокоооо, знам к’во правя!";
-        String shout = "Споко бе, ман!";
-        String noTalkingStare = "Хубаво деее";
-        String wiseAnswer = "Ахъ.";
+        String askQustion_Bobi = "Добре.";
+        String shoutQuestion_Bobi = "Спокоооо, знам к’во правя!";
+        String shout_Bobi = "Споко бе, ман!";
+        String noTalkingStare_Bobi = "Хубаво деее";
+        String wiseAnswer_Bobi = "Ахъ.";
 
         while (!sentence.equals(".")) {
-            // Ако зададем/викаме въпрос
-            if (sentence.charAt(sentence.length() - 1) == '?') {
-                if (checkUppercase(sentence)) {
-                    System.out.println(shoutQuestion);
-                } else {
-                    System.out.println(askQustion);
-                }
+            System.out.print("Ти: ");
+            sentence = scan.nextLine();
+            if (sentence.isBlank()) {
+                System.out.println("Боби: " + noTalkingStare_Bobi);
+            } else if (sentence.equals(".")) {
+                break;
             } else {
-                // Ако му извикаме
-                if (checkUppercase(sentence)) {
-                    System.out.println(shout);
-                } else if (starePoint(sentence)) { // Ако го гледаме без да казваме нищо
-                    System.out.println(noTalkingStare);
+                boolean askQuestion = (sentence.charAt(sentence.length() - 1) == '?') && !sentence.equals(sentence.toUpperCase());
+                boolean shoutQustion = (sentence.charAt(sentence.length() - 1) == '?') && sentence.equals(sentence.toUpperCase());
+                boolean justShout = sentence.equals(sentence.toUpperCase()) && !(sentence.charAt(sentence.length() - 1) == '?') && !sentence.isBlank() && !sentence.equals(".");
+
+                if (shoutQustion) {
+                    System.out.println("Боби: " + shoutQuestion_Bobi);
+                } else if (askQuestion) {
+                    System.out.println("Боби: " + askQustion_Bobi);
+                } else if (justShout) {
+                    System.out.println("Боби: " + shout_Bobi);
                 } else {
-                    System.out.println(wiseAnswer); // Каквото и друго да му кажем
+                    System.out.println("Боби: " + wiseAnswer_Bobi);
                 }
             }
-            sentence = scan.nextLine();
         }
 
         scan.close();

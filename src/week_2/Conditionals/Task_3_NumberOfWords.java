@@ -14,7 +14,7 @@ public class Task_3_NumberOfWords {
         Scanner scan = new Scanner(System.in);
         System.out.println("Веведете изречение: ");
        // String sentence = scan.nextLine();
-        int len = scan.nextLine().split(" ").length;
+        int len = scan.nextLine().split("\\s+").length;
 
         //Брои една дума заради \n
         //Сплитва на интервал и ако имаме само 1 запетая я брои като отделна дума, да правим ли проверка, ще трябва цикъл
