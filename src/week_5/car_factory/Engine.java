@@ -1,14 +1,40 @@
 package week_5.car_factory;
 
-import java.util.Random;
+public class Engine {
+    private String engineModel;
+    private int power;
+    private EngineType engineType;
 
-public enum Engine {
-    PETROL, DIESEL, HYBRID, ELECTRIC;
+    public Engine() {
+        this("", 0, EngineType.randomEngine());
+    }
+    public Engine(String model, int power, EngineType engineType) {
+        this.engineModel = model;
+        this.power = power;
+        this.engineType = engineType;
+    }
 
-    private static final Random RANDENGINE = new Random();
+    public String getEngineModel() {
+        return engineModel;
+    }
 
-    public static Engine randomEngine() {
-        Engine[] engines = values();
-        return engines[RANDENGINE.nextInt(engines.length)];
+    public void setEngineModel(String engineModel) {
+        this.engineModel = engineModel;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
     }
 }

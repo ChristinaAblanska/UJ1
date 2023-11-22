@@ -111,8 +111,8 @@ public class Demo {
         newCar.setWidth(2 + randomNumber.nextDouble(9.0));
         newCar.setWeight(300 + randomNumber.nextDouble(1700));
 
-        newCar.setEngine(Engine.randomEngine());
-        boolean[] extras = new boolean[5];
+//        newCar.setEngine(EngineType.randomEngine());
+          boolean[] extras = new boolean[5];
 
         while (index && countExtras(extras) < 2) {
             for(int i = 0; i < 5; i++) {

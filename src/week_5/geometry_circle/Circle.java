@@ -5,10 +5,10 @@ public class Circle {
     private double radius;
     private Color color;
 
-    public Circle() {
-        this.radius = 1.0;
-        this.color = Color.randomColor();
-    }
+//    public Circle() {
+//        this.radius = 1.0;
+//        this.color = Color.randomColor();
+//    }
 
     public Circle(double radius, Color color) {
         this.radius = radius;

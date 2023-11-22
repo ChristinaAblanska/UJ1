@@ -34,7 +34,7 @@ public class Task_1_BullsAndCows {
         }
 
         while (!guessed) {
-            System.out.print("Тайно число: " + secretNum + " Преположение: ");
+            System.out.print("Тайно число: ****" + " Преположение: ");
             guess = scan.next();
             while (!validateInput(guess)) {
                 System.out.println("Невалидно число!");
@@ -50,7 +50,7 @@ public class Task_1_BullsAndCows {
                 break;
             } else { // check for cows - return number of cows
                 int cows = checkForCows(secretNum, guess);
-                System.out.printf("Тайно число: %s Преположение: %s %nОтговор: %d бика и %d крави", secretNum, guess, bulls, cows);
+                System.out.printf("Тайно число: **** Преположение: %s %nОтговор: %d бика и %d крави", guess, bulls, cows);
             }
             System.out.print("\n");
         }

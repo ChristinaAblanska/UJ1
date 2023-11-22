@@ -3,7 +3,7 @@ package week_5.car_factory;
 import java.text.DecimalFormat;
 
 //марка, модел, тип каросерия, цвят, дължина, ширина, тегло, тип двигател (бензин, дизел, хибрид, електрически), цена и екстри (опционални).
-public class Car {
+public class Car extends Engine {
     private Brand brand;
     private Model model;
     private Bodywork bodywork;
@@ -11,7 +11,6 @@ public class Car {
     private double length;
     private double width;
     private double weight;
-    private Engine engine;
     private double price;
     private boolean ac;
     private boolean automaticTransmission;
@@ -19,23 +18,9 @@ public class Car {
     private boolean tempomat;
     private boolean elGlass;
 
-//    public Car() {
-//        this.brand = null;
-//        this.model = null;
-//        this.bodywork = null;
-//        this.color = null;
-//        this.length = 0.0;
-//        this.width = 0.0;
-//        this.weight = 0.0;
-//        this.engine = Engine.PETROL;
-//        this.price = 0.0;
-//        this.ac = false;
-//        this.automaticTransmission = false;
-//        this.navigation = false;
-//        this.tempomat = false;
-//        this.elGlass = false;
-//    }
-
+    public Car() {
+        super();
+    }
 
     public Brand getBrand() {
         return brand;
@@ -47,6 +32,10 @@ public class Car {
 
     public Model getModel() {
         return model;
+    }
+
+    public EngineType getEngine() {
+        return super.getEngineType();
     }
 
     public void setModel(Model model) {
@@ -91,14 +80,6 @@ public class Car {
 
     public void setWeight(double weight) {
         this.weight = weight;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
     }
 
     public double getPrice() {
@@ -157,7 +138,7 @@ public class Car {
                 .append(model).append(" | bodywork: ")
                 .append(bodywork).append("; color: ")
                 .append(color).append("; engine: ")
-                .append(engine).append("; length: ")
+                .append(super.getEngineType()).append("; length: ")
                 .append(df.format(length)).append("m; width: ")
                 .append(df.format(width)).append("m; weight: ")
                 .append(df.format(weight)).append("t; ");
@@ -192,7 +173,7 @@ public class Car {
     }
 
     public void printCar() {
-        System.out.printf("%-30s | %-10s | %-30s | %-20s | %-20s | %-10.2f | %-10.2f | %-10.2f |", brand, model, bodywork.toString(), color.toString(), engine.toString(),
+        System.out.printf("%-30s | %-10s | %-30s | %-20s | %-20s | %-10.2f | %-10.2f | %-10.2f |", brand, model, bodywork.toString(), color.toString(), super.getEngineType().toString(),
                 length, width, weight);
         if (ac || automaticTransmission || navigation || tempomat || elGlass) {
             System.out.printf(" %-50s |", "Equipped with: ");
