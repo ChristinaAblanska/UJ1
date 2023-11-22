@@ -2,6 +2,7 @@ package week_3.Lists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 //3.ListEquals
@@ -24,7 +25,8 @@ public class Task_3_ListEquals {
             ls2.add(scan.nextInt());
             ++i;
         }
-
+        Collections.sort(ls1);
+        Collections.sort(ls2);
         System.out.println(ls1.equals(ls2));
         scan.close();
     }

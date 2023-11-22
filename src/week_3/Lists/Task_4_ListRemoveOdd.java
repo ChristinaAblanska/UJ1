@@ -15,17 +15,24 @@ public class Task_4_ListRemoveOdd {
     public static void main(String[] args) {
         ArrayList<Integer> nums = new ArrayList<Integer>(Arrays.asList(1, 4, 6, 2, 10, 5));
 
-        int i;
-        if (nums.size() % 2 == 0) {
-            i = nums.size() - 1;
-        } else {
-            i = nums.size() - 2;
+//        int i;
+//        if (nums.size() % 2 == 0) {
+//            i = nums.size() - 1;
+//        } else {
+//            i = nums.size() - 2;
+//        }
+//
+//        for (; i > 0; i -= 2) {
+//            nums.remove(i);
+//        }
+//
+//        System.out.println(nums);
+
+        ArrayList<Integer> evens = new ArrayList<>();
+        for (int i = 1; i < nums.size(); i += 2) {
+            evens.add(nums.get(i));
         }
 
-        for (; i > 0; i -= 2) {
-            nums.remove(i);
-        }
-
-        System.out.println(nums);
+        System.out.println(evens);
     }
 }
