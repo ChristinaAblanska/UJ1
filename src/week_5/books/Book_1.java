@@ -3,7 +3,7 @@ package week_5.books;
 public class Book_1 {
     private String title;
     private String author;
-    private int isbn;
+    private String isbn;
     private int pages;
     private String publisher;
     private double price;
@@ -24,11 +24,11 @@ public class Book_1 {
         this.author = author;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 

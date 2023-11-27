@@ -178,22 +178,35 @@ public class Car extends Engine {
         if (ac || automaticTransmission || navigation || tempomat || elGlass) {
             System.out.printf(" %-50s |", "Equipped with: ");
             if (ac) {
-                System.out.printf("%-25s |", "AC");
+                System.out.printf(" %-25s |", "1");
+            } else {
+                System.out.printf(" %-25s |", "0");
             }
             if (automaticTransmission) {
-                System.out.printf("%-25s |", "Automatic Transmission");
+                System.out.printf(" %-25s |", "1");
+            } else {
+                System.out.printf(" %-25s |", "0");
             }
             if (navigation) {
-                System.out.printf("%-25s |", "Navigation");
+                System.out.printf(" %-25s |", "1");
+            }
+            else {
+                System.out.printf(" %-25s |", "0");
             }
             if (tempomat) {
-                System.out.printf("%-25s |", "Tempomat");
+                System.out.printf(" %-25s |", "1");
+            }
+            else {
+                System.out.printf(" %-25s |", "0");
             }
             if (elGlass) {
-                System.out.printf("%-25s |", "Electric glasses");
+                System.out.printf(" %-25s |", "1");
+            }
+            else {
+                System.out.printf(" %-25s |", "0");
             }
         } else {
-            System.out.printf(" %-50s |", "This car is not equipped with any extras. ");
+            System.out.printf(" %-50s | %-25s | %-25s | %-25s | %-25s | %-25s |", "This car is not equipped with any extras. ", "0", "0", "0", "0", "0");
         }
         System.out.printf("%-10.2f |%n", price);
     }

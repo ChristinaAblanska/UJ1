@@ -92,7 +92,7 @@ public class Demo {
     // Питай как да оправиш последните колони?
     private static void printAllCars(ArrayList<Car> cars) {
         System.out.printf("%-30s | %-10s | %-30s | %-20s | %-20s | %-10s | %-10s | %-10s | %-50s | %-25s | %-25s | %-25s | %-25s | %-25s |%-10s |%n",
-        "Brand", "Model", "Bodywork", "Color", "Engine", "Length", "Width", "Weight", "Extras", "", "", "", "", "", "Price");
+        "Brand", "Model", "Bodywork", "Color", "Engine", "Length", "Width", "Weight", "Extras", "AC", "Automatic Transmission", "Navigation", "Tempomat", "ElGlass", "Price");
         for (Car car : cars) {
             car.printCar();
         }

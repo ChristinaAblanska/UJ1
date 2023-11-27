@@ -3,12 +3,12 @@ package week_5.books;
 public class Book_2 {
     private String title;
     private String author;
-    private int isbn;
+    private String isbn;
     private int pages;
     private String publisher;
     private double price;
 
-    public static final int COUNT = 0;
+    public static int COUNT = 0;
 
     public String getTitle() {
         return title;
@@ -17,13 +17,14 @@ public class Book_2 {
     public Book_2() {
         this.title = "";
         this.author = "";
-        this.isbn = 0;
+        this.isbn = "";
         this.pages = 0;
         this.publisher = "";
         this.price = 0.0;
+        COUNT++;
     }
 
-    public Book_2(String title, String author, int isbn, int pages, String publisher, double price) {
+    public Book_2(String title, String author, String isbn, int pages, String publisher, double price) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -43,11 +44,11 @@ public class Book_2 {
         this.author = author;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 

@@ -7,7 +7,7 @@ public class Student {
     private int schoolClass;
     private double avgGrade;
 
-    public static final int countStudents = 300;
+    public static int countStudents = 0;
 
     public Student(String firstName, String lastName, int age, int schoolClass, double avgGrade) {
         this.firstName = firstName;
@@ -15,6 +15,7 @@ public class Student {
         this.age = age;
         this.schoolClass = schoolClass;
         this.avgGrade = avgGrade;
+        countStudents++;
     }
 
     public String getFirstName() {

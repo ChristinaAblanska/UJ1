@@ -13,7 +13,7 @@ public class BookTest {
         System.out.println("\nSet values: \n");
         book.setTitle("The Count of Monte Christo");
         book.setAuthor("Alexandr Dumas");
-        book.setIsbn(123456789);
+        book.setIsbn("123456789");
         book.setPages(1258);
         book.setPublisher("SunDay");
         book.setPrice(50.55);

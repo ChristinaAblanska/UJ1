@@ -30,7 +30,7 @@ public class SchoolTest {
                 System.out.println("Average grade: ");
                 avgGrade = Double.parseDouble(scan.next());
 
-                if (countStudents < Student.countStudents) {
+                if (countStudents < School.maxCountOfStudents) {
                     Student pupil = new Student(firstName, lastName, age, schoolClass, avgGrade);
                     school.addStudent(pupil);
                 } else {
@@ -42,7 +42,7 @@ public class SchoolTest {
             }
         }
 
-        System.out.println("All students' count: " + countStudents);
+        System.out.println("All students' count: " + Student.countStudents);
         school.printStudents();
         school.printGraduates();
 

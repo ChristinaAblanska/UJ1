@@ -6,6 +6,7 @@ public class School {
     String name;
     ArrayList<Student> students = new ArrayList<>();
     ArrayList<Integer> classes = new ArrayList<>();
+    public static int maxCountOfStudents = 300;
 
     public String getName() {
         return name;

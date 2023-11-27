@@ -1,6 +1,11 @@
 package week_5.geometry_triangle;
 
 import java.text.DecimalFormat;
+//import static java.lang.Math.sqrt;
+//import static java.lang.Math.pow;
+//import static java.lang.Math.cos;
+//import static java.lang.Math.acos;
+import static java.lang.Math.*;
 
 public class Triangle {
     private double sideA;
@@ -10,19 +15,22 @@ public class Triangle {
     private double angleB;
     private double angleC;
 
-    public double getSideA() {
-        return sideA;
-    }
 
-    public Triangle(double sideA, double sideB, double angleA) {
+    public Triangle(double sideA, double sideB, double angleC) {
         // c^2 = a^2 + b^2 + 2abcosG
         this.sideA = sideA;
         this.sideB = sideB;
-        sideC = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2) + (2 * Math.cos(angleA)));
+        sideC = sqrt((pow(sideA, 2) + pow(sideB, 2)) - (2 * sideA * sideB) * cos(toRadians(angleC)));
 
-        this.angleA = (Math.pow(sideB, 2) + Math.pow(sideC, 2) - Math.pow(sideA, 2)) / (2 * sideB * sideC);
-        angleB = (Math.pow(sideA, 2) + Math.pow(sideC, 2) - Math.pow(sideB, 2)) / (2 * sideA * sideC);
-        angleC = (Math.pow(sideA, 2) + Math.pow(sideB, 2) - Math.pow(sideC, 2)) / (2 * sideA * sideB);
+        this.angleC = angleC;//toDegrees(acos((pow(sideB, 2) + pow(sideC, 2) - pow(sideA, 2)) / (2 * sideB * sideC)));
+        angleB = toDegrees(acos((pow(sideA, 2) + pow(sideC, 2) - pow(sideB, 2)) / (2 * sideA * sideC)));
+        angleA = toDegrees(acos((pow(sideB, 2) + pow(sideC, 2) - pow(sideA, 2)) / (2 * sideB * sideC)));
+
+
+    }
+
+    public double getSideA() {
+        return sideA;
     }
 
     public void setSideA(double sideA) {
@@ -80,15 +88,22 @@ public class Triangle {
 
     public String toString() {
         StringBuilder triangle = new StringBuilder();
-        DecimalFormat df = new DecimalFormat("#.#####");
+        DecimalFormat df = new DecimalFormat("#.##");
 
-        triangle.append("Side A: ").append(df.format(sideA))
-                .append(" Side B: ").append(df.format(sideB))
-                .append(" SIde C: ").append(df.format(sideC))
-                .append("\nAngle A: ").append(df.format(angleA))
-                .append(" Angle B: ").append(df.format(angleB))
+        triangle.append("Side A: ").append(df.format(sideA)).append(" | ")
+                .append(" Side B: ").append(df.format(sideB)).append(" | ")
+                .append(" Side C: ").append(df.format(sideC))
+                .append("\nAngle A: ").append(df.format(angleA)).append(" | ")
+                .append(" Angle B: ").append(df.format(angleB)).append(" | ")
                 .append(" Angle C: ").append(df.format(angleC));
 
         return triangle.toString();
     }
+
+//    public static boolean checkForTriangle(double sideA, double sideB, double sideC) {
+//        boolean first = sideA < sideB + sideC;
+//        boolean second = sideB < sideA + sideC;
+//        boolean third = sideC < sideA + sideB;
+//        return first && second && third;
+//    }
 }

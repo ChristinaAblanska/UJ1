@@ -13,7 +13,7 @@ public class BookTest_1 {
 
         for (int i = 0; i < maxCount; i++) {
             System.out.println("Choose action: \n1. New Book entry\n2. Exit");
-            choice = scan.nextInt();
+            choice = Integer.parseInt(scan.nextLine());
             if (choice == 1) {
                 Book_2 testBook = new Book_2();
                 readBook(scan, testBook);
@@ -33,21 +33,21 @@ public class BookTest_1 {
     public static void readBook(Scanner scan, Book_2 book) {
         String title;
         String author;
-        int isbn;
+        String isbn;
         int pages;
         String publisher;
         double price;
 
         System.out.println("Title: ");
-        title = scan.next();
+        title = scan.nextLine();
         book.setTitle(title);
 
         System.out.println("Author: ");
-        author = scan.next();
+        author = scan.nextLine();
         book.setAuthor(author);
 
         System.out.println("ISBN: ");
-        isbn = Integer.parseInt(scan.nextLine());
+        isbn = scan.nextLine();
         book.setIsbn(isbn);
 
         System.out.println("Pages: ");
