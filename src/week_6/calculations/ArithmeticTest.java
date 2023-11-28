@@ -14,7 +14,7 @@ public class ArithmeticTest {
 //        int n = 2000000000; // свърши ни паметта
         int[] numbers = new int[n];
         for (int i = 0; i < n; i++) {
-            numbers[i] = rand.nextInt();
+            numbers[i] = rand.nextInt(2, 21);
         }
 
         System.out.println(arithmetic.add(numbers));

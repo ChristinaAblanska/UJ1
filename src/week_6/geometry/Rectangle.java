@@ -39,6 +39,6 @@ public class Rectangle extends Shape {
     }
 
     public double getMaxPossibleSquareInside() {
-        return Math.max(height, width);
+        return Math.min(height, width);
     }
 }

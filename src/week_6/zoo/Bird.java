@@ -6,8 +6,8 @@ public class Bird extends Animal{
     }
 
     public void sing(){
-        super.walk();
-        this.fly();
+//        super.walk();
+//        this.fly();
         System.out.println("I am singing");
     }
 

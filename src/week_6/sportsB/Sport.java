@@ -24,7 +24,7 @@ public class Sport {
         return name;
     }
 
-//    public int getNumberOfTeamMembers() {
-//        return numberOfTeamMembers;
-//    }
+    public int getNumberOfTeamMembers() {
+        return numberOfTeamMembers;
+    }
 }

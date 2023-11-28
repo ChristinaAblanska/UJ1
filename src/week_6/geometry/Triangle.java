@@ -1,6 +1,6 @@
 package week_6.geometry;
 
-import static  java.lang.Math.pow;
+import static  java.lang.Math.*;
 public class Triangle extends Shape{
     private double sideA;
     private double sideB;
@@ -50,15 +50,15 @@ public class Triangle extends Shape{
         return sideA + sideB + sideC;
     }
 
-    public double getCosA() {
-        return (pow(sideB, 2) + pow(sideC, 2) - pow(sideA, 2)) / (2 * sideB * sideC);
+    public double getAngleA() {
+        return toDegrees(acos((pow(sideB, 2) + pow(sideC, 2) - pow(sideA, 2)) / (2 * sideB * sideC)));
     }
 
-    public double getCosB() {
-        return (pow(sideA, 2) + pow(sideC, 2) - pow(sideB, 2)) / (2 * sideA * sideC);
+    public double getAngleB() {
+        return toDegrees(acos((pow(sideA, 2) + pow(sideC, 2) - pow(sideB, 2)) / (2 * sideA * sideC)));
     }
 
-    public double getCosC() {
-        return (pow(sideA, 2) + pow(sideB, 2) - pow(sideC, 2)) / (2 * sideA * sideB);
+    public double getAngleC() {
+        return toDegrees(acos((pow(sideA, 2) + pow(sideB, 2) - pow(sideC, 2)) / (2 * sideA * sideB)));
     }
 }

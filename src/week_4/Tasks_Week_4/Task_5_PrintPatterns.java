@@ -14,15 +14,15 @@ public class Task_5_PrintPatterns {
         Scanner scan = new Scanner(System.in);
         char choice = 'h';
 
-//        printFigures(6);
-        printFigureA(6);
-        System.out.println("a)");
-
-        printFigureB(6);
-        System.out.println("b)");
-
-        printFigureC(6);
-        System.out.println("c)");
+        printFigures(6);
+//        printFigureA(6);
+//        System.out.println("a)");
+//
+//        printFigureB(6);
+//        System.out.println("b)");
+//
+//        printFigureC(6);
+//        System.out.println("c)");
 
         while (choice != 'a' && choice != 'b' && choice != 'c') {
             System.out.println("Choose a figure (a, b, c): ");
@@ -109,7 +109,7 @@ public class Task_5_PrintPatterns {
 
     private static String[] createFigureB(int size) {
         String[] figureB = new String[size];
-        for (int i = size; i >= 0; i--) {
+        for (int i = size - 1; i >= 0; i--) {
             int curr = 0;
             StringBuilder currentRow = new StringBuilder();
             for (int j = 0; j <= i; j++) {

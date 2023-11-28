@@ -1,12 +1,9 @@
 package week_6.sportsB;
 
-import week_6.sports.Soccer;
-import week_6.sports.Sport;
-
 public class SportBTest {
     public static void main(String[] args) {
-        week_6.sports.Sport soccer = new Soccer();
-        week_6.sports.Sport sport = new Sport();
+        Sport soccer = new Soccer();
+        Sport sport = new Sport();
 
         System.out.println("Soccer name: " + soccer.getName());
         System.out.println("Soccer n of players: " + soccer.getNumberOfTeamMembers());

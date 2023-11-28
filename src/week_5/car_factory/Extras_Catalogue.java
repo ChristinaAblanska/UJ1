@@ -9,10 +9,10 @@ public enum Extras_Catalogue {
     }
 
     public static void printCatalogue() {
-        System.out.println(Navigation.toString() + " - " + Navigation.price);
-        System.out.println(Automatic.toString() + " - " + Automatic.price);
-        System.out.println(AC.toString() + " - " + AC.price);
-        System.out.println(Tempomat.toString() + " - " + Tempomat.price);
-        System.out.println(ElGlss.toString() + " - " + ElGlss.price);
+        System.out.println(Navigation + " - " + Navigation.price);
+        System.out.println(Automatic + " - " + Automatic.price);
+        System.out.println(AC + " - " + AC.price);
+        System.out.println(Tempomat + " - " + Tempomat.price);
+        System.out.println(ElGlss + " - " + ElGlss.price);
     }
 }

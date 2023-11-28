@@ -1,14 +1,13 @@
 package week_6.geometry;
 
-import java.rmi.registry.Registry;
 import java.util.Scanner;
 
 public class TestShapes1 {
     public static void main(String[] args) {
-        Shape rect = new Rectangle();
-        Shape square = new Square();
-        Shape triangle = new Triangle();
-        Shape circle = new Circle();
+//        Shape rect = new Rectangle();
+//        Shape square = new Square();
+//        Shape triangle = new Triangle();
+//        Shape circle = new Circle();
 
         Shape shape = new Shape();
         Scanner scan = new Scanner(System.in);
@@ -27,7 +26,7 @@ public class TestShapes1 {
                 break;
             case 2:
                 double side;
-                System.out.println("Enter the side of the squre:");
+                System.out.println("Enter the side of the square:");
                 side = scan.nextDouble();
                 shape = new Square(side);
                 break;
@@ -63,15 +62,15 @@ public class TestShapes1 {
                 return;
         }
 
-        if (shape instanceof Rectangle) {
+        if (shape instanceof Square) {
+            System.out.printf("Квадрат със страна %.2f%n", ((Square) shape).getHeight());
+        } else if (shape instanceof Rectangle) {
             System.out.printf("Правоъгълник с дължина %.2f и ширина %.2f%n", ((Rectangle) shape).getHeight(), ((Rectangle) shape).getWidth());
             System.out.printf("Страната на най-големия квадрат който се събира в правоъгълника е: %.2f%n", ((Rectangle) shape).getMaxPossibleSquareInside());
-        } else if (shape instanceof Square) {
-            System.out.printf("Квадрат със страна %.2f%n", ((Square) shape).getHeight());
         } else if (shape instanceof Triangle) {
             System.out.printf("Триъгълник със страни %.2f, %.2f, %.2f%n", ((Triangle) shape).getSideA(), ((Triangle) shape).getSideB(), ((Triangle) shape).getSideC());
-            System.out.printf("И ъгли: %.2f, %.2f, %.2f%n", ((Triangle) shape).getCosA(), ((Triangle) shape).getCosB(), ((Triangle) shape).getCosC());
-            double minCos = minCos(((Triangle) shape).getCosA(), ((Triangle) shape).getCosB(), ((Triangle) shape).getCosC());
+            System.out.printf("И ъгли (в градуси): %.2f, %.2f, %.2f%n", ((Triangle) shape).getAngleA(), ((Triangle) shape).getAngleB(), ((Triangle) shape).getAngleC());
+            double minCos = minCos(((Triangle) shape).getAngleA(), ((Triangle) shape).getAngleB(), ((Triangle) shape).getAngleC());
             if (minCos < 0) {
                 System.out.println("Тъпоъгълен");
             } else if (minCos > 0) {

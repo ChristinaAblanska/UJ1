@@ -36,7 +36,7 @@ public class Line {
 
     public void readLine(Scanner scan) {
         Point a = new Point();
-        Point b= new Point();
+        Point b = new Point();
 
         double distanceAB = Math.sqrt(Math.pow(b.getX() - a.getX(), 2) + Math.pow(b.getY() - a.getY(), 2));
         do {

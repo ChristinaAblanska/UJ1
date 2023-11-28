@@ -5,7 +5,6 @@ public class Main {
         Bird sparrow = new Bird();
         sparrow.walk();
         sparrow.fly();
-        System.out.println();
         sparrow.sing();
     }
 }
